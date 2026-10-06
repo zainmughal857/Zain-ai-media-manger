@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<title>ZAIN AI Media Manager</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div><div class="brand">ZAIN <span>AI</span></div><div class="sub">Media Manager</div></div>
+    <button class="icon" onclick="toggleTheme()">◐</button>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="hero">
+        <div><div class="eyebrow">AI SOCIAL COMMAND CENTER</div>
+        <h1>Good evening 👋</h1>
+        <p>Tell ZAIN AI what you want to publish.</p></div>
+        <button class="primary" onclick="showPage('chat')">Ask AI →</button>
+      </div>
+      <div class="grid2">
+        <div class="card stat"><small>Today's Reach</small><strong>—</strong><span>Connect analytics</span></div>
+        <div class="card stat"><small>Scheduled</small><strong>0</strong><span>posts</span></div>
+      </div>
+      <div class="card">
+        <div class="sectionTitle">Connected Accounts</div>
+        <div class="account"><b>Facebook</b><button>Connect</button></div>
+        <div class="account"><b>Instagram</b><button>Connect</button></div>
+        <div class="account"><b>TikTok</b><button>Connect</button></div>
+        <div class="account"><b>YouTube</b><button>Connect</button></div>
+      </div>
+    </section>
+
+    <section id="chat" class="page">
+      <h2>🤖 AI Agent</h2>
+      <p class="muted">Example: “Create a viral 20-second stone crushing Reel for tomorrow.”</p>
+      <div id="messages" class="messages">
+        <div class="bubble ai">Hi! I’m ZAIN AI. Tell me what you want to create.</div>
+      </div>
+      <div class="composer"><input id="chatInput" placeholder="Tell ZAIN AI what to do…"><button onclick="sendChat()">Send</button></div>
+    </section>
+
+    <section id="create" class="page">
+      <h2>🎬 Create Content</h2>
+      <div class="card form">
+        <label>Topic</label><input id="topic" value="Giant Rock vs Jaw Crusher">
+        <label>Platform</label><select id="platform"><option>Facebook</option><option>Instagram</option><option>TikTok</option><option>YouTube Shorts</option></select>
+        <label>Goal</label><select id="goal"><option>Maximum Reach</option><option>Engagement</option><option>Followers</option></select>
+        <button class="primary" onclick="generateContent()">Generate Content</button>
+      </div>
+      <div id="result" class="card hidden"></div>
+    </section>
+
+    <section id="schedule" class="page">
+      <h2>📅 Schedule</h2>
+      <div class="empty card"><div class="big">＋</div><b>No scheduled posts</b><p>Create content and schedule it after connecting your accounts.</p><button class="primary" onclick="showPage('create')">Create Post</button></div>
+    </section>
+
+    <section id="analytics" class="page">
+      <h2>📊 Analytics</h2>
+      <div class="grid2">
+        <div class="card stat"><small>Views</small><strong>—</strong><span>Not connected</span></div>
+        <div class="card stat"><small>Engagement</small><strong>—</strong><span>Not connected</span></div>
+      </div>
+      <div class="card"><div class="sectionTitle">AI Recommendation</div><p>Connect your social accounts to let ZAIN AI analyze performance and recommend your next content.</p></div>
+    </section>
+  </main>
+
+  <nav class="nav">
+    <button onclick="showPage('home')">⌂<span>Home</span></button>
+    <button onclick="showPage('chat')">✦<span>AI</span></button>
+    <button onclick="showPage('create')">＋<span>Create</span></button>
+    <button onclick="showPage('schedule')">◷<span>Schedule</span></button>
+    <button onclick="showPage('analytics')">▥<span>Stats</span></button>
+  </nav>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
